@@ -1,6 +1,6 @@
 <template>
-  <div class="px-6 py-8">
-    <Menu class="relative">
+  <div class="container mx-auto px-6 py-8">
+    <Menu class="relative inline-block">
       <MenuButton
         class="inline-flex items-center px-2 py-1 text-white bg-indigo-500 rounded"
       >
@@ -112,7 +112,7 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  setup () {}
+  setup() {}
 })
 </script>
 

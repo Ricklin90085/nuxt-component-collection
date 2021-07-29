@@ -1,6 +1,3 @@
-import { resolve } from 'path'
-const vueCompositiobnAPIFullpath = resolve('./node_modules/@vue/composition-api/dist/vue-composition-api.esm.js')
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -14,18 +11,14 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -40,22 +33,8 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: ['@nuxtjs/svg'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
-
-  alias: {
-    // keep default settings
-    '~~': resolve(__dirname, './'),
-    '@@': resolve(__dirname, './'),
-    '~': resolve(__dirname, './'),
-    '@': resolve(__dirname, './'),
-    assets: resolve(__dirname, './assets'), // (unless you have set a custom `dir.assets`)
-    static: resolve(__dirname, './static'), // (unless you have set a custom `dir.static`)
-    // https://github.com/vueuse/vue-demi/issues/76#issuecomment-882249216
-    '@vue/composition-api/dist/vue-composition-api.esm.js': vueCompositiobnAPIFullpath
-  }
+  build: {}
 }

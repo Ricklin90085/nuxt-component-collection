@@ -1,24 +1,23 @@
 <template>
-  <button @click="handleClick">
+  <div class="cursor-pointer" @click="handleClick">
     <slot />
-  </button>
+  </div>
 </template>
 
 <script>
 import { defineComponent, inject } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  setup () {
-    const api = inject('MenuContext')
+  setup() {
+    const api = inject('PopoverContext')
 
     const handleClick = () => {
-      if (api.menuState) {
-        api.closeMenu()
+      if (api.popoverState) {
+        api.closePopover()
       } else {
-        api.openMenu()
+        api.openPopover()
       }
     }
-
     return {
       handleClick
     }

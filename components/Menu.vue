@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="menuRef">
     <slot />
   </div>
 </template>
@@ -11,11 +11,12 @@ import {
   reactive,
   ref
 } from '@nuxtjs/composition-api'
+import { onClickOutside } from '@vueuse/core'
 
 export default defineComponent({
-  setup () {
-    const menuState = ref(false)
+  setup() {
     const menuRef = ref(null)
+    const menuState = ref(true)
     const api = reactive({
       menuState,
       openMenu: () => {
@@ -25,6 +26,8 @@ export default defineComponent({
         menuState.value = false
       }
     })
+
+    onClickOutside(menuRef, api.closeMenu)
 
     provide('MenuContext', api)
     return {
