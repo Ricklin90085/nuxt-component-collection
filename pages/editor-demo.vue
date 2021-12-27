@@ -17,7 +17,7 @@
 import { defineComponent, ref } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  setup () {
+  setup() {
     const editorRef = ref(null)
     const json = ref(null)
     const getEditorContent = () => {

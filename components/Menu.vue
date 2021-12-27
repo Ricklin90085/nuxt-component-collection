@@ -14,9 +14,16 @@ import {
 import { onClickOutside } from '@vueuse/core'
 
 export default defineComponent({
-  setup() {
+  props: {
+    filterable: {
+      type: Boolean,
+      default: false
+    }
+  },
+  setup(props) {
     const menuRef = ref(null)
     const menuState = ref(true)
+
     const api = reactive({
       menuState,
       openMenu: () => {
